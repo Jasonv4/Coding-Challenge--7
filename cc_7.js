@@ -27,3 +27,14 @@ let calculateLoyaltyDiscount = (amount, years) => {
 } // Arrow function that applies a discount based on time
 console.log(calculateLoyaltyDiscount(100, 6)); // Expected output: "Discounted Price: $85.00"
 console.log(calculateLoyaltyDiscount(200, 2)); // Expected output: "Discounted Price: $190.00"
+
+//Task 4 Parameters and Arguments
+function calculateShippingCost(weight, location, expedited = false) {
+    let baseCost; if (location === "USA") { baseCost = 5 + (0.5 * weight);}
+    else if (location === "Canada") {baseCost = 10 + (0.7 * weight);
+        if (expedited) {baseCost +=10;}
+     } 
+     return `Shipping Cost: $${baseCost.toFixed(2)}`
+} // Function to calculate shipping costs
+console.log(calculateShippingCost(10, "USA", true)); // Expected output: "Shipping Cost: $20.00"
+console.log(calculateShippingCost(5, "Canada", false)); // Expected output: "Shipping Cost: $13.50"
