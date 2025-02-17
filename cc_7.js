@@ -58,6 +58,7 @@ function filterHighValueTransactions(transactions, filterFunction) {
 console.log(filterHighValueTransactions(transactions, amount => amount > 1000)) 
 // Expected output [3000, 5000, 7000, 9000]
 
+
 //Task 7 Budget Tracker 
 function createBudgetTracker() {
     let balance = 0; return function(expense) {
@@ -68,3 +69,12 @@ function createBudgetTracker() {
 let budget = createBudgetTracker();
 console.log(budget(300)); // Expected output: "Current Balance: -$300"
 console.log(budget(200)); // Expected output: "Current Balance: -$500"
+
+
+//Task 8 Recursion in Javascript
+function calculateGrowth(years, revenue) {
+    if (years < 10) {return calculateGrowth(years + 1 , revenue * 1.05)}
+    return `Projected Revenue Growth: $${revenue.toFixed(2)}`
+} // Recursive function that projects revenue growth
+console.log(calculateGrowth(8, 1000)); // Expected output: "Projected Revenue: $1102.50"
+console.log(calculateGrowth(5, 5000)); // Expected output: "Projected Revenue: $6381.41"
