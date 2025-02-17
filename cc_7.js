@@ -28,6 +28,7 @@ let calculateLoyaltyDiscount = (amount, years) => {
 console.log(calculateLoyaltyDiscount(100, 6)); // Expected output: "Discounted Price: $85.00"
 console.log(calculateLoyaltyDiscount(200, 2)); // Expected output: "Discounted Price: $190.00"
 
+
 //Task 4 Parameters and Arguments
 function calculateShippingCost(weight, location, expedited = false) {
     let baseCost; if (location === "USA") { baseCost = 5 + (0.5 * weight);}
@@ -39,6 +40,7 @@ function calculateShippingCost(weight, location, expedited = false) {
 console.log(calculateShippingCost(10, "USA", true)); // Expected output: "Shipping Cost: $20.00"
 console.log(calculateShippingCost(5, "Canada", false)); // Expected output: "Shipping Cost: $13.50"
 
+
 //Task 5 Returning Values
 function calculateLoanInterest(principal, rate, years) {
     let interest = principal * rate * years;
@@ -46,3 +48,12 @@ function calculateLoanInterest(principal, rate, years) {
 } // Function that returns total interest 
 console.log(calculateLoanInterest(1000, 0.05, 3)); // Expected output: "Total Interest: $150.00"
 console.log(calculateLoanInterest(5000, 0.07, 5)); // Expected output: "Total Interest: $1750.00"
+
+
+//Task 6 Higher-Order Functions
+let transactions = [1000, 3000, 5000, 7000, 9000]
+function filterHighValueTransactions(transactions, filterFunction) {
+    return transactions.filter(filterFunction); 
+} // Function that filters transactions above $1000
+console.log(filterHighValueTransactions(transactions, amount => amount > 1000)) 
+// Expected output [300, 5000, 7000, 9000]
